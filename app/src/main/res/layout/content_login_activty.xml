@@ -29,7 +29,7 @@
         android:inputType="textPersonName"
         android:hint="Team name"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/teamname"
         android:layout_weight="20" />
 
     <android.support.v7.widget.AppCompatEditText
@@ -38,11 +38,39 @@
         android:inputType="textPassword"
         android:hint="password"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/password"
         android:layout_weight="20" />
     <android.support.v7.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
+        android:id="@+id/login"
         android:text="Login"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:orientation="horizontal"
+    android:layout_weight="10"
+    android:gravity="center"
+    android:weightSum="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:hint="Don't have account ?"
+
+         />
+
+    <Button
+        android:text="@string/visitor"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/visit"
+        android:background="#ffffff"
+        android:layout_weight="0.08" />
+
+
+</LinearLayout>
+
+
 </LinearLayout>

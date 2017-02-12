@@ -2,13 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.applefish.gheraspoint">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activty.SplashScreenActivity"
+        <service
+            android:name=".fcm.MyFirebaseInstanceIDService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".fcm.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".activty.SplashScreenActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,6 +44,42 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.applefish.gheraspoint.activty.SplashScreenActivity" />
+        </activity>
+        <activity
+            android:name=".activty.MainActivity"
+            android:label="@string/title_activity_main"
+            android:parentActivityName=".activty.LoginActivty"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.applefish.gheraspoint.activty.LoginActivty" />
+        </activity>
+        <activity
+            android:name=".activty.SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:parentActivityName=".activty.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.applefish.gheraspoint.activty.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activty.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:parentActivityName=".activty.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.applefish.gheraspoint.activty.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activty.TaskActivity"
+            android:label="@string/title_activity_task"
+            android:parentActivityName=".activty.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.applefish.gheraspoint.activty.MainActivity" />
         </activity>
     </application>
 
